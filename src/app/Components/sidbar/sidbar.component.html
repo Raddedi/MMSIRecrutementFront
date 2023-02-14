@@ -1,0 +1,90 @@
+
+<!-- partial -->
+<!-- partial:partials/_sidebar.html --> 
+<!--div class="theme-setting-wrapper" -->
+  
+  
+  
+    
+   
+    <!--div class="sidebar-bg" id="sidebar-dark-theme"-->
+    <nav  class="sidebar-bg" id="sidebar-dark-theme">
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/home/acc">
+              <i class="mdi mdi-grid-large menu-icon"></i>
+              <span class="menu-title">Accueil</span>
+            </a>
+            
+          </li>
+          <li class="nav-item nav-category">Candidature</li>
+          <li  class="nav-item">
+            <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+              <i class="menu-icon mdi mdi-card-text-outline"></i>
+              <span class="menu-title">Candidature</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="ui-basic">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item" routerLink="/home/candidature"> <a class="nav-link">formulaire de candidature</a></li>
+                <li class="nav-item" routerLink="/home/aff"> <a class="nav-link">les candidatures</a></li>
+               
+              </ul>
+             </div>
+          </li>
+          
+           <li  class="nav-item nav-category">RH</li>
+              <li class="nav-item">
+             <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+              <i class="menu-icon mdi mdi-floor-plan"></i>
+              <span class="menu-title">RH</span>
+              <i class="menu-arrow"></i>
+             </a>
+             <div class="collapse" id="ui-basic">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item" routerLink="/home/RHList"> <a class="nav-link">Liste des responsables</a></li>
+                <li class="nav-item" routerLink="/home/addRh"> <a class="nav-link">Ajouter Utilisateur</a></li>
+                <li class="nav-item" routerLink="/home/off"> <a class="nav-link">Ajouter Offre</a></li>
+              </ul>
+             </div>
+              </li>
+              
+             
+          <li class="nav-item nav-category">Candidats</li>
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="collapse" href="#ag" aria-expanded="false" aria-controls="ag">
+                <i class="menu-icon mdi mdi-briefcase-check"></i>
+                <span class="menu-title">Candidats</span>
+                <i class="menu-arrow"></i>
+              </a>
+              <div class="collapse" id="ag">
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item" routerLink="/home/candList"> <a class="nav-link">Liste Des Entreprises</a></li>
+                  <li class="nav-item" routerLink="/home/addcond"> <a class="nav-link">Ajouter Entreprise</a></li>
+                </ul>
+                </div>
+            </li>
+          
+         
+         
+        
+          <li class="nav-item nav-category"></li>
+          <li class="nav-item nav-category"></li>
+          <li class="nav-item nav-category"></li>
+          <li class="nav-item nav-category"></li>
+          <li class="nav-item nav-category"></li>
+          
+          <li class="nav-item">
+            <a class="nav-link" href=>
+              <i class="menu-icon mdi mdi-power text-primary"></i>
+              
+              <span class="menu-title" (click)="logOut()">Sign Out</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+       
+    
+      <!-- partial -->
+      
+      

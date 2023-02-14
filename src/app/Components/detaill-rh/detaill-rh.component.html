@@ -1,0 +1,85 @@
+<div class="main-panel">
+    <div class="content-wrapper">
+      <div class="row">
+        <div id="detail" class="col-12 grid-margin">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title text-center">modifier les champs</h4>
+                <form [formGroup]="formGroup" (ngSubmit)="update()" class="form-sample" >
+  
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group row">
+                        <label class="col-sm-5 col-form-label">Nom</label>
+                        <div class="col-7">
+                          <input type="text" class="form-control" formControlName="nom">
+                        </div>
+                      </div>
+                    </div>
+  
+                    <div class="col-md-6">
+                      <div class="form-group row">
+                        <label class="col-sm-5 col-form-label">Prenom</label>
+                        <div class="col-7">
+                          <input type="text" class="form-control" formControlName="prenom" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+  
+  
+  
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group row">
+                        <label class="col-sm-5 col-form-label">Telephone</label>
+                        <div class="col-sm-7">
+                          <input type="text" class="form-control" formControlName="tel" />
+                        </div>
+                      </div>
+                    </div>
+                  
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group row">
+                        <label class="col-sm-5 col-form-label">Email </label>
+                        <div class="col-sm-7">
+                          <input type="text" class="form-control" formControlName="email"/>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group row">
+                        <label class="col-sm-5 col-form-label">Password</label>
+                        <div class="col-sm-7">
+                          <input type="password" class="form-control" formControlName="password" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+  
+  
+               <!--   <div class="row"  *ngIf="showMsg">
+                    <div class="col-xs-12">
+                      <p class="alert alert-success">
+                          <strong>Registration Success!</strong> Please click here to login!.
+  
+                      </p>
+                    </div>
+                  </div>-->
+  
+  
+                  <button type="submit" class="btn btn-primary me-2">Submit</button>
+                    
+                </form>
+              </div>
+            </div>
+          </div>
+  
+      </div>
+    </div>
+  
+  </div>
+  

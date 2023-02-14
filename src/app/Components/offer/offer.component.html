@@ -1,0 +1,38 @@
+
+    <div class="content-wrapper ">
+        <div class="row">
+          <div class="col-md-9 grid-margin stretch-card">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title text-center">Ajouter Offre</h4>
+                
+                <form [formGroup]="formGroup" (ngSubmit)="addOffer()" class="forms-sample">
+                  <div class="form-group">
+                    <label >Description</label>
+                    <input type="text" class="form-control" formControlName="description" id="description" placeholder="Description">
+                  </div>
+                  <div class="form-group">
+                    <label >Competence</label>
+                    <input type="text" class="form-control" formControlName="competence" id="competence" placeholder="competence">
+                  </div>
+                  <div class="form-group">
+                    <label >Niveau</label>
+                    <input type="text" class="form-control" formControlName="niveau" id="niveau" placeholder="niveau">
+                  </div>
+                  
+                    <div class="custom-file">
+                      <input type="file"  class="custom-file-input" (change)="handleFileInput($event)">
+                     <label class="custom-file-label">Image</label>
+                     </div>   
+                     <br>
+                  <button type="submit" class="btn btn-primary me-2">Submit</button>
+                  <button class="btn btn-light" routerLink="../publication">Cancel</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+          
+
