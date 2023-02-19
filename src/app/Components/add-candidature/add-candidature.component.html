@@ -10,10 +10,16 @@
               <div class="form-group">
                 <label >Description</label>
                 <input type="text" class="form-control" formControlName="description" id="description" placeholder="Description">
+                <div style="color:red;" *ngIf="formGroup.get('description')?.hasError('required') && submitted" class="alert alert-danger">
+                  Description obligatoire
+                </div>
               </div>
               <div class="form-group">
                 <label >Competence</label>
                 <input type="text" class="form-control" formControlName="competence" id="competence" placeholder="competence">
+                <div style="color:red;" *ngIf="formGroup.get('competence')?.hasError('required') && submitted" class="alert alert-danger">
+                  Competence obligatoire
+                </div>
               </div>
               <div class="form-group">
                 <label >Niveau</label>
@@ -22,8 +28,11 @@
               
                 <div class="custom-file">
                   <input type="file"  class="custom-file-input" (change)="handleFileInput($event)">
-                 <label class="custom-file-label">Image</label>
-                 </div>   
+                 <label class="custom-file-label">PDF</label>
+                 <div style="color:red;" *ngIf="formGroup.get('competence')?.hasError('required') && submitted" class="alert alert-danger">
+                  PDF obligatoire
+                </div> 
+                </div>   
                  <br>
               <button type="submit" class="btn btn-primary me-2">Submit</button>
               <button class="btn btn-light" routerLink="../publication">Cancel</button>

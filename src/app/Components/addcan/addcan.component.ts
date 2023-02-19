@@ -18,7 +18,13 @@ export class AddcanComponent implements OnInit {
     this.formGroup=this.form.group({nom:['',Validators.required],prenom:['',Validators.required],tel:['',Validators.required],email:['',Validators.required],
    password:['',Validators.required],adress:['',Validators.required]})
   }
+  submitted:boolean;
   addUser(){
+    if (this.formGroup.invalid) {
+      this.submitted=true;
+      return;
+    }
+   else {
     let formData =new FormData();
   formData.append("nom",this.formGroup.value.nom);
   formData.append("prenom",this.formGroup.value.prenom);
@@ -30,9 +36,10 @@ export class AddcanComponent implements OnInit {
   formData.append("adress",this.formGroup.value.adress);
   this.candse.addcand(formData).subscribe(
     resultat=>{console.log(resultat);
-      Swal.fire('','Ajouter avec succès','success');}
+      Swal.fire('','Ajouter avec succès','success');
+      this.router.navigateByUrl("home/candList")}
   )
-  }
+  }}
   handleFileInput(files: any) {
     this.fileToUpload = <Array<File>>files.target.files;
     console.log(this.fileToUpload)

@@ -10,9 +10,19 @@ import { environment } from 'src/environments/environment';
 export class LoginService {
 
   constructor(private httpclient:HttpClient) {}
-  LoginUser(user:Rh){
-    console.log(user)
-    return this.httpclient.post<any>(`${environment.BasedUrl}/responsabl/login`,user)
+  LoginEntr(rh:any){
+    
+    return this.httpclient.post<any>(`${environment.BasedUrl}/responsabl/login`,rh)
+      
+  }
+  LoginCan(can:any){
+    
+    return this.httpclient.post<any>(`${environment.BasedUrl}/cand/login`,can)
+      
+  }
+  LoginAdmin(admin:any){
+   
+    return this.httpclient.post<any>(`${environment.BasedUrl}/admin/login`,admin)
       
   }
 }

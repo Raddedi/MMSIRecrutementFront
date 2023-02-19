@@ -31,7 +31,29 @@ export class LoginComponent  {
     let photo=f.value['photo'];
     let R:Rh;
     R=new Rh(id,nom,prenom,tel,photo,email,psw,Role);
-    this.rhser.LoginEntr(R).subscribe(
+    this.logser.LoginCan(R).subscribe(
+      resultat=>{console.log("login",resultat);
+      if(resultat!= null){
+        Swal.fire('', 'Login Valide', 'success');
+        localStorage.setItem("acteur", JSON.stringify(resultat));
+   
+    this.router.navigateByUrl("/home/acc");
+     
+     }}
+    )
+    this.logser.LoginEntr(R).subscribe(
+      resultat=>{console.log("login",resultat);
+      if(resultat!= null){
+        Swal.fire('', 'Login Valide', 'success');
+        localStorage.setItem("acteur", JSON.stringify(resultat));
+   
+    this.router.navigateByUrl("/home/acc");
+     
+     }}
+    )
+    console.log("r",R)
+
+    this.logser.LoginAdmin(R).subscribe(
       resultat=>{console.log("login",resultat);
       if(resultat!= null){
         Swal.fire('', 'Login Valide', 'success');

@@ -16,9 +16,7 @@ export class SidbarComponent implements OnInit {
     this.utilisateur=JSON.parse(this.local)
     
     this.role=this.utilisateur.role
-    if(this.role==null){
-      this.role=this.utilisateur[0].role
-    }
+    
     console.log("test role = ",this.role)
   }
   logOut(){

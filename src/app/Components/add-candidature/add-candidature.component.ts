@@ -21,11 +21,18 @@ export class AddCandidatureComponent implements OnInit {
     this.local=localStorage.getItem("acteur");
     this.utilisateur=JSON.parse(this.local);
     this.id=this.utilisateur.id
-   console.log("test = ",this.utilisateur);
+   console.log("test = ",this.id);
    
    
   }
+  submitted:boolean;
+
   addOffer(){
+    if (this.formGroup.invalid) {
+      this.submitted=true;
+      return;
+    }
+   else {
     let formData =new FormData();
     formData.append("Description",this.formGroup.value.description);
     formData.append("competence",this.formGroup.value.competence);
@@ -33,9 +40,11 @@ export class AddCandidatureComponent implements OnInit {
     formData.append("file",this.fileToUpload[0]);
     this.offser.AddPublication(formData,this.id).subscribe(
       resultat=>{console.log(resultat);
-        Swal.fire('','Ajouter avec succès','success');}
+        Swal.fire('','Ajouter avec succès','success');
+        this.router.navigateByUrl("home/aff")
+       }
     )
-  } 
+  } }
  
 
 handleFileInput(files: any) {

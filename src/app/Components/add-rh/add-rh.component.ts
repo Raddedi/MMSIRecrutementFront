@@ -21,7 +21,14 @@ export class AddRhComponent implements OnInit{
     this.formGroup=this.form.group({nom:['',Validators.required],prenom:['',Validators.required],tel:['',Validators.required],email:['',Validators.required],
    password:['',Validators.required]})
   }
+  submitted:boolean;
   addUser(){
+    
+      if (this.formGroup.invalid) {
+        this.submitted=true;
+        return;
+      }
+else{
     let formData =new FormData();
   formData.append("nom",this.formGroup.value.nom);
   formData.append("prenom",this.formGroup.value.prenom);
@@ -32,9 +39,10 @@ export class AddRhComponent implements OnInit{
   formData.append("file",this.fileToUpload[0]);
   this.rhs.addRH(formData).subscribe(
     resultat=>{console.log(resultat);
-      Swal.fire('','Ajouter avec succès','success');}
+      Swal.fire('','Ajouter avec succès','success');
+      this.router.navigateByUrl("home/RHList")}
   )
-  }
+  }}
   handleFileInput(files: any) {
     this.fileToUpload = <Array<File>>files.target.files;
     console.log(this.fileToUpload)

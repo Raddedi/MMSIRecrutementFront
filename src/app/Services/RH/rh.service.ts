@@ -23,11 +23,7 @@ export class RHService {
   getById(id:any){
     return this.http.get<Rh>(`${environment.BasedUrl}/responsabl/findById/`+id);
   }
-  LoginEntr(rh:Rh){
-    console.log(rh)
-    return this.http.post<any>(`${environment.BasedUrl}/responsabl/login`,rh)
-      
-  }
+  
   addRH(rh:any){
     console.log(rh)
     return this.http.post<any>(`${environment.BasedUrl}/responsabl/`,rh)

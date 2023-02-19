@@ -30,7 +30,8 @@ addUser(){
   formData.append("file",this.fileToUpload[0]);
   this.regser.AddUser(formData).subscribe(
     resultat=>{console.log(resultat);
-      Swal.fire('','Ajouter avec succès','success');}
+      Swal.fire('','Ajouter avec succès','success');
+      this.router.navigateByUrl("home/login")}
   )
 }
 handleFileInput(files: any) {

@@ -27,7 +27,12 @@
                     
                   <p class="card-description">{{p.date}}</p>
                    <hr class="my-1"/>
-  
+                   <div  class="template-demo center flex-nowrap text-center ">
+                    <button type="submit" class="btn btn-inverse-danger center btn-icon" (click)="delete(p.id)" >
+                        <i class="mdi mdi-close"></i>
+                    </button>
+
+                </div>
                 </div>
             </div>
   

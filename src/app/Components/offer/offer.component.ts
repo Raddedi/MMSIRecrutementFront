@@ -35,7 +35,9 @@ export class OfferComponent implements OnInit {
     formData.append("file",this.fileToUpload[0]);
     this.offser.AddPublication(formData,this.id).subscribe(
       resultat=>{console.log(resultat);
-        Swal.fire('','Ajouter avec succès','success');}
+        Swal.fire('','Ajouter avec succès','success');
+        this.router.navigateByUrl("home/acc")
+      }
     )
   } 
  
